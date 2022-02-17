@@ -7,7 +7,13 @@ class c_Dices
 	c_Dice* d2;
 	int D1, D2;
 public:
-	c_Dices(){}
+	c_Dices()
+	{
+		this->D1 = 0;
+		this->D2 = 0;
+		this->d1 = nullptr;
+		this->d2 = nullptr;
+	}
 	void Throw_Dice()
 	{
 		this->d1 = new c_Dice();
@@ -21,6 +27,7 @@ public:
 		{
 			D1++;
 			D2++;
+			std::cout << "DICE 1 & DICE 2 - WINER\n";
 		}
 		else
 		{
@@ -32,5 +39,23 @@ public:
 	{
 		std::cout << "Dice 1: " << this->D1 << "  :  Dice 2: " << this->D2 << "\n";
 	}
+	void End()
+	{
+		if (this->D1 > this->D2)
+		{
+			std::cout << "Winer: Dice 1!!!\n";
+		}
+		else if(this->D1 < this->D2)
+		{
+			std::cout << "Winer: Dice 2!!!\n";
+		}
+	}
+	int getD1()
+	{
+		return this->D1;
+	}
+	int getD2()
+	{
+		return this->D2;
+	}
 };
-

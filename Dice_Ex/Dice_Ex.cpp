@@ -6,6 +6,7 @@ int main()
     srand(time(0));
     c_Dices d;
     int vibor;
+    int n;
     do
     {
         cout << "\t\tMenu\n";
@@ -18,8 +19,15 @@ int main()
         {
         case 1:
             system("cls");
-            d.Throw_Dice();
-            system("pause");
+            cout << "Ener kol throw dice: ";
+            cin >> n;
+            for (int i = 0; i < n; i++)
+            {
+                d.Throw_Dice();
+                std::cout << "Dice 1: " << d.getD1() << "\tDice 2: " << d.getD2() << "\n";
+                system("pause");
+                system("cls");
+            }
             system("cls");
             break;
         case 2:
@@ -30,5 +38,6 @@ int main()
             break;
         }
     } while (vibor != 0);
+    system("cls");
+    d.End();
 }
-
